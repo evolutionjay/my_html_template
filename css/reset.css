@@ -3,7 +3,7 @@
 	http://meyerweb.com/eric/tools/css/reset/ 
 	v1.0 | 20080212 
  	-----------------------------------------
-	J.Chen edited | 2013(yy)/11(mm)/4(dd) 
+	J.Chen edited | 2014(yy)/04(mm)/04(dd) 
 	http://jchen.lofter.com
 */
 
@@ -25,6 +25,14 @@ body {
 	-moz-tap-highlight-color	:rgba(0,0,0,0);
 	-ms-tap-highlight-color		:rgba(0,0,0,0);
 	tap-highlight-color			:rgba(0,0,0,0);
+	/* -webkit-touch-callout: none;  
+	-webkit-user-select: none;  
+	-khtml-user-select: none;  
+	-moz-user-select: none;  
+	-ms-user-select: none;  
+	user-select: none; */	
+	/* 上面的css是用来禁止用户选中 */
+	font-family: "Helvetica Neue",\5FAE\8F6F\96C5\9ED1,Tohoma; /* mac字体，微软雅黑，xp字体，宋体有点问题，所以不用，除非自写*/
 }
 ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
@@ -52,39 +60,25 @@ a img { border: none; text-decoration:none; }
 :focus { outline: 0; }
 /* #Clearing
 ================================================== */
+.clearfix:before, .clearfix:after { content: ""; display: table; font-size:0 !important; line-height:0!important; height:0!important;}  
+.clearfix:after { clear: both; }  
+  
+/* IE 6/7 */  
+.clearfix { *zoom: 1; } 
 
-	/* Self Clearing Goodness */
-	.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
-	
-	/* Use clearfix class on parent to clear nested columns,
-	or wrap each row of columns in a <div class="row"> */
-	.clearfix:before,
-	.clearfix:after {
-		content: '\0020';
-		display: block;
-		overflow: hidden;
-		visibility: hidden;
-		width: 0;
-		height: 0;
-	}
-	.clearfix:after {
-		clear: both;
-	}
-	.clearfix {
-		zoom: 1;
-	}
-	
-	/* You can also use a <br class="clear" /> to clear columns */
-	.clear {
-		clear: both;
-		display: block;
-		overflow: hidden;
-		visibility: hidden;
-		width: 0;
-		height: 0;
-	}
-
-.pngfix {}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+/* 重置安卓Pad下面input焦点状态白底的样式 */  
+input{
+   -webkit-user-modify: read-write-plaintext-only;
+   -webkit-tap-highlight-color:#3072af;
+}
 
 input[type="reset"]::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
@@ -93,23 +87,97 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{
 	border:none;padding:0;
 }
 
-/* Smaller than standard 960 (devices and browsers) */
+
+
+
+
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+
+
+
+
+
+
+/*
+
+ Smaller than standard 960 (devices and browsers)
 @media only screen and (max-width: 959px) {}
 
-/* Tablet Portrait size to standard 960 (devices and browsers) */
+ Tablet Portrait size to standard 960 (devices and browsers) 
 @media only screen and (min-width: 768px) and (max-width: 959px) {}
 
-/* All Mobile Sizes (devices and browser) */
+ All Mobile Sizes (devices and browser) 
 @media only screen and (max-width: 767px) {}
 
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+ Mobile Landscape Size to Tablet Portrait (devices and browsers) 
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+ Mobile Portrait Size to Mobile Landscape Size (devices and browsers) 
 @media only screen and (max-width: 479px) {}
+
+*/
 
 /* 视网膜显示屏CSS */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 2) {}
